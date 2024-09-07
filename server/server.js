@@ -9,7 +9,7 @@ import morgan from 'morgan';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { WebSocketServer } from 'ws';
-import { ethers } from 'ethers'; // Import ethers library
+// import { ethers } from 'ethers'; 
 import fetch from 'node-fetch';
 
 import authRoutes from "./routes/auth.js";
@@ -85,14 +85,14 @@ const server = app.listen(PORT, () => {
 const wss = new WebSocketServer({ server });
 
 // Ethereum setup
-const provider = new ethers.JsonRpcProvider(process.env.INFURA_URL); // Replace with your provider
-const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider); // Replace with your wallet private key
-const tokenContractAddress = process.env.TOKEN_CONTRACT_ADDRESS; // Replace with your token contract address
-const tokenAbi = [ // Replace with the ABI of your token contract
-  "function transfer(address to, uint amount) public returns (bool)",
-  "function balanceOf(address owner) public view returns (uint)"
-];
-const tokenContract = new ethers.Contract(tokenContractAddress, tokenAbi, wallet);
+// const provider = new ethers.JsonRpcProvider(process.env.INFURA_URL); // Replace with your provider
+// const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider); // Replace with your wallet private key
+// const tokenContractAddress = process.env.TOKEN_CONTRACT_ADDRESS; // Replace with your token contract address
+// const tokenAbi = [ // Replace with the ABI of your token contract
+//   "function transfer(address to, uint amount) public returns (bool)",
+//   "function balanceOf(address owner) public view returns (uint)"
+// ];
+// const tokenContract = new ethers.Contract(tokenContractAddress, tokenAbi, wallet);
 
 let clients = new Map();
 let activeBattles = new Map(); // Store ongoing battles

@@ -7,6 +7,10 @@ import { useSelector } from "react-redux";
 import { CssBaseline,ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
+import ContestPage from "../src/scenes/contestPage";
+import UserPage from "../src/scenes/userPage";
+import OpportunityPage from "../src/scenes/opportunityPage";
+import UserPathsPage from "../src/scenes/pathPage";
 
 
 function App() {
@@ -32,6 +36,23 @@ const isAuth = Boolean(useSelector((state)=>state.token));
               path="/profile/:userId"
               element={isAuth ? <ProfilePage /> : <Navigate to="/login" />}
             />
+            <Route 
+            path="/contest" 
+            element={<ContestPage/>}
+            />
+            <Route 
+            path="/userpage" 
+            element={<UserPage/>}
+            />
+            <Route 
+            path="/opportunity"
+            element={<OpportunityPage/>}
+            />
+            <Route 
+            path="/path"
+            element={<UserPathsPage/>}
+            />
+
         </Routes>
         </ThemeProvider>
       </BrowserRouter>

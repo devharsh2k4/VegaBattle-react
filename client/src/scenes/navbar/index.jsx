@@ -20,6 +20,7 @@ import {
   EmojiEvents,
   Tv,
   MilitaryTech,
+  Splitscreen,
 } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { setMode, setLogout } from "../../state";
@@ -78,7 +79,7 @@ const NavBar = () => {
             sx={{ fontSize: "25px", color: dark }}
           />
           <Person
-            onClick={() => navigate(`/profile/${userId}`)} // Navigate to profile page
+            onClick={() => navigate("/userpage")} // Navigate to profile page
             sx={{ fontSize: "25px", color: dark }}
           />
           <Tv
@@ -89,6 +90,10 @@ const NavBar = () => {
             onClick={() => navigate("/opportunity")}
             sx={{ fontSize: "25px", color: dark }}
           />
+           <Splitscreen
+              onClick={() => navigate("/path")}
+              sx={{ fontSize: "25px", color: dark }}
+            />
           <Help sx={{ fontSize: "25px" }} />
           <FormControl variant="standard" value={fullName}>
             <Select
@@ -166,7 +171,7 @@ const NavBar = () => {
               sx={{ fontSize: "25px", color: dark }}
             />
             <Person
-              onClick={() => navigate(`/profile/${userId}`)} // Navigate to profile page
+              onClick={() => navigate('/userpage')} // Navigate to profile page
               sx={{ fontSize: "25px", color: dark }}
             />
             <Tv
@@ -175,6 +180,10 @@ const NavBar = () => {
             />
             <MilitaryTech
               onClick={() => navigate("/opportunity")}
+              sx={{ fontSize: "25px", color: dark }}
+            />
+             <Splitscreen
+              onClick={() => navigate("/path")}
               sx={{ fontSize: "25px", color: dark }}
             />
             <Help sx={{ fontSize: "25px" }} />
